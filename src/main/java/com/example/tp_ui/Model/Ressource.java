@@ -11,6 +11,8 @@ public class Ressource {
         val = v;
     }
 
+
+    
     public void addToVal(int v) {
         val += v;
     }
