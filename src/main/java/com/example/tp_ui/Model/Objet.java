@@ -18,6 +18,7 @@ public class Objet<string> {
         return Or;
     }
 
+    
     public void setOr(int or) {
         Or = or;
     }
