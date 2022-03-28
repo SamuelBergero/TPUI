@@ -40,7 +40,7 @@ public class JeuController implements Initializable
         magasinObjet.AddItem(q);
         for (Achetable a: magasinObjet.GetItems())
         {
-            a.addObserver(j);
+            a.observeBy(j);
         }
     }
 

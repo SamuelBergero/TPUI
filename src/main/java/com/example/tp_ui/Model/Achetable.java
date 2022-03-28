@@ -1,8 +1,10 @@
 package com.example.tp_ui.Model;
 
+import Observateur.Observer;
+
 import java.util.Observable;
 
-public abstract class Achetable extends Observable {
+public abstract class Achetable extends Observer {
     int prix = 2;
     String nom;
     int niv;
@@ -19,7 +21,6 @@ public abstract class Achetable extends Observable {
     public void addNiv()
     {
         niv++;
-        setChanged();
-        notifyObservers(-prix);
+        notifyAll(-prix);
     }
 }
