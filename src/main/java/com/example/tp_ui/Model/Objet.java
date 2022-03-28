@@ -2,26 +2,17 @@ package com.example.tp_ui.Model;
 
 public class Objet<string> {
 
-    private string Name;
-    private int Or;
+    private string Nom;
+    private int Cout;
     private int Niveau;
 
-    public string getName() {
-        return Name;
-    }
+    public string getNom() {return Nom;}
 
-    public void setName(string name) {
-        Name = name;
-    }
+    public void setNom(string name) {Nom = name;}
 
-    public int getOr() {
-        return Or;
-    }
+    public int getCout(){return Cout;}
 
-    
-    public void setOr(int or) {
-        Or = or;
-    }
+    public void setCout(int or) {Cout = or;}
 
     public int getNiveau() {
         return Niveau;
