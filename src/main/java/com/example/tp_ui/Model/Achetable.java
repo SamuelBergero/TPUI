@@ -3,11 +3,11 @@ package com.example.tp_ui.Model;
 import java.util.Observable;
 
 public abstract class Achetable extends Observable {
-    int prix = 2;
+    double prix = 2;
     String nom;
     int niv;
 
-    public int getPrix(){return prix;}
+    public double getPrix(){return prix;}
     public void setPrix(int prix){this.prix=prix;}
 
     public int getNiv(){return niv;}
