@@ -19,12 +19,12 @@ public class Joueur implements Observer {
         this.point = point;
     }
 
-    public void addPoint(int change){point += change;}
+    public void addPoint(float change){point += change;}
 
     @Override
     public void update(Observable o, Object arg)
     {
-        int i = Integer.parseInt(arg.toString());
+        float i = Float.parseFloat(arg.toString());
         addPoint(i);
     }
 }

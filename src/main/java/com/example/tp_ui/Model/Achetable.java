@@ -5,7 +5,9 @@ import java.util.Observable;
 public abstract class Achetable extends Observable {
     double prix = 2;
     String nom;
-    int niv;
+    int niv = 1;
+    boolean typeEffet;
+    double effet;
 
     public double getPrix(){return prix;}
     public void setPrix(int prix){this.prix=prix;}

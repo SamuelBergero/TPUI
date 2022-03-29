@@ -1,9 +1,6 @@
 package com.example.tp_ui.Controller;
 
-import com.example.tp_ui.Model.Achetable;
-import com.example.tp_ui.Model.Joueur;
-import com.example.tp_ui.Model.Magasin;
-import com.example.tp_ui.Model.Objet;
+import com.example.tp_ui.Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,12 +28,9 @@ public class JeuController implements Initializable
 
     public JeuController()
     {
-        Objet o = new Objet();
-        o.setNom("but");
-        magasinObjet.AddItem(o);
 
-        Objet q = new Objet();
-        q.setNom("test");
+        Capacité q = new Capacité();
+        q.setNom("but");
         magasinObjet.AddItem(q);
         for (Achetable a: magasinObjet.GetItems())
         {
