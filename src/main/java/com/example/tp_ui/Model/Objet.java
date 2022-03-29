@@ -1,15 +1,14 @@
 package com.example.tp_ui.Model;
 
-import javafx.fxml.FXML;
-
 import java.util.ArrayList;
 
 public class Objet extends Achetable{
 
     double Prix;
     int Niveau;
+    String Description;
 
-    ArrayList TabObjets = new ArrayList<>();
+    ArrayList<Achetable> TabObjets = new ArrayList<Achetable>();
 
 
     public void augPrixCl(){
@@ -44,7 +43,13 @@ public class Objet extends Achetable{
     public void setNiveau(int niveau) {
         Niveau = niveau;
     }
+    public String getDescription() {
+        return Description;
+    }
 
+    public void setDescription(String description) {
+        Description = description;
+    }
 
 
 }

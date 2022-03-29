@@ -14,8 +14,12 @@ import java.util.ResourceBundle;
 
 public class JeuController implements Initializable
 {
-    public Label nomObjet1;
-    public Label DescriptionObjet1;
+
+    public Label Pioche;
+    public Label descriptionPioche;
+    public Label prixPioche;
+    public Label niveauPioche;
+
     Magasin magasinObjet = new Magasin("objet");
     Joueur j = new Joueur();
 
@@ -26,16 +30,10 @@ public class JeuController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     j.setPoint(0);
-    nomObjet1.setText("Pioche");
-    DescriptionObjet1.setText("Améliore la vitesse de récupération de points");
-//    nomObjet2.setText("Pioche");
-//    nomObjet3.setText("Pioche");
-//    nomObjet4.setText("Pioche");
     }
 
     public JeuController()
     {
-
         Capacité q = new Capacité();
         q.setNom("but");
         magasinObjet.AddItem(q);
@@ -43,6 +41,13 @@ public class JeuController implements Initializable
         {
             a.addObserver(j);
         }
+
+        Objet pioche = new Objet();
+        pioche.setNom("but");
+        pioche.setDescription("+ vitesse");
+        pioche.setPrix(3000);
+        pioche.setNiveau(1);
+        magasinObjet.AddItem(pioche);
     }
 
     @FXML
