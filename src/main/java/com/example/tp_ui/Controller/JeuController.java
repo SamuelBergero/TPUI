@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 public class JeuController implements Initializable
 {
 
-    public Label Pioche;
+    public Label piocheLabel;
     public Label descriptionPioche;
     public Label prixPioche;
     public Label niveauPioche;
@@ -37,17 +37,36 @@ public class JeuController implements Initializable
         Capacité q = new Capacité();
         q.setNom("but");
         magasinObjet.AddItem(q);
+
+        Objet Pioche = new Objet();
+        Pioche.setNom("but");
+        Pioche.setDescription("x1.5 vitesse");
+        Pioche.setPrix(1500);
+        magasinObjet.AddItem(Pioche);
+
+        Objet Perceuse = new Objet();
+        Perceuse.setNom("but");
+        Perceuse.setDescription("x3 vitesse");
+        Perceuse.setPrix(3000);
+        magasinObjet.AddItem(Perceuse);
+
+        Objet Nain = new Objet();
+        Nain.setNom("but");
+        Nain.setDescription("x5 vitesse");
+        Nain.setPrix(5000);
+        magasinObjet.AddItem(Nain);
+
+        Objet Foreuse = new Objet();
+        Foreuse.setNom("but");
+        Foreuse.setDescription("x10 vitesse");
+        Foreuse.setPrix(10000);
+        magasinObjet.AddItem(Foreuse);
+
         for (Achetable a: magasinObjet.GetItems())
         {
             a.addObserver(j);
-        }
 
-        Objet pioche = new Objet();
-        pioche.setNom("but");
-        pioche.setDescription("+ vitesse");
-        pioche.setPrix(3000);
-        pioche.setNiveau(1);
-        magasinObjet.AddItem(pioche);
+        }
     }
 
     @FXML
@@ -65,6 +84,7 @@ public class JeuController implements Initializable
     public void updatePoint(){
         scene = Test.getScene();
         Test.setText("Point: " + j.getPoint());
+
         int point = j.getPoint();
         String p;
 
