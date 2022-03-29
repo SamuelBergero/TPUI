@@ -14,6 +14,8 @@ import java.util.ResourceBundle;
 
 public class JeuController implements Initializable
 {
+    public Label nomObjet1;
+    public Label DescriptionObjet1;
     Magasin magasinObjet = new Magasin("objet");
     Joueur j = new Joueur();
 
@@ -23,7 +25,12 @@ public class JeuController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+    j.setPoint(0);
+    nomObjet1.setText("Pioche");
+    DescriptionObjet1.setText("Améliore la vitesse de récupération de points");
+//    nomObjet2.setText("Pioche");
+//    nomObjet3.setText("Pioche");
+//    nomObjet4.setText("Pioche");
     }
 
     public JeuController()

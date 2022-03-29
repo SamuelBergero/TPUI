@@ -13,9 +13,8 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main-View.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Clicker");
+        stage.setTitle("Jeu Clicker");
         stage.setScene(scene);
-
         stage.show();
 
 

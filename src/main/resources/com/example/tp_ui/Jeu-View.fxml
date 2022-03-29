@@ -10,7 +10,19 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_ui.Controller.JeuController">
 
     <center>
-        <TabPane fx:id="tabPane" prefHeight="395.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <TabPane fx:id="tabPane" prefHeight="395.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE"
+                 BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Jeu" fx:id="mainMenu" >
+                    <content>
+                        <AnchorPane>
+                            <children>
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
             <tabs>
                 <Tab text="Ressource">
                     <content>
@@ -26,17 +38,49 @@
                 <Tab text="Magasin">
                     <content>
                         <AnchorPane>
-                        <Label fx:id="Test" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0" />
-                        <Button layoutX="167.0" layoutY="113.0" mnemonicParsing="false" id="butAchat" onAction="#achat" text="LvlUp" userData="but" />
+                            <Label fx:id="Test" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0"/>
+                            <Button layoutX="167.0" layoutY="113.0" mnemonicParsing="false" id="butAchat"
+                                    onAction="#achat" text="LvlUp" userData="but"/>
 
                         </AnchorPane>
-
 
 
                     </content>
                 </Tab>
             </tabs>
+            <tabs>
+                <Tab text="Objet">
+                    <content>
+                        <AnchorPane>
+                            <Label fx:id="Test2" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0"/>
+                            <Label fx:id="nomObjet1" layoutX="164.0" layoutY="96.0" prefHeight="17.0"
+                            <Label fx:id="DescriptionObjet1" layoutX="164.0" layoutY="96.0" prefHeight="17.0"
+                                   prefWidth="165.0"/>
+                            <Button layoutX="50" layoutY="113.0" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                                    text="LvlUp" userData="but"/>
 
+                        </AnchorPane>
+
+
+                    </content>
+                </Tab>
+            </tabs>
+            <tabs>
+                <Tab text="Capacité">
+                    <content>
+                        <AnchorPane>
+                            <Label fx:id="Test3" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0"/>
+                            <Label fx:id="nomCapacité1" layoutX="164.0" layoutY="96.0" prefHeight="17.0"
+                                   prefWidth="165.0"/>
+                            <Button layoutX="50" layoutY="113.0" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                                    text="LvlUp" userData="but"/>
+
+                        </AnchorPane>
+
+
+                    </content>
+                </Tab>
+            </tabs>
         </TabPane>
     </center>
 </BorderPane>
