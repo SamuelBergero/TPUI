@@ -3,11 +3,10 @@ package com.example.tp_ui.Model;
 import java.util.Observable;
 
 public abstract class Achetable extends Observable {
-    double prix = 2;
+    double prix;
     String nom,desc;
-    int niv = 1;
-    boolean typeEffet;
-    double effet;
+    int niv = 0;
+    double effetLvl;
 
     public double getPrix(){return prix;}
     public void setPrix(int prix){this.prix=prix;}
@@ -21,6 +20,7 @@ public abstract class Achetable extends Observable {
     public String getDescription() {return desc;}
     public void setDescription(String description) {desc = description;}
 
+    public double getEffet(){return niv * effetLvl;}
     public void addNiv()
     {
         niv++;

@@ -54,10 +54,11 @@
                         <AnchorPane>
                             <Label fx:id="Pioche" layoutX="20" layoutY="10" prefHeight="17.0"/>
                             <Label fx:id="descriptionPioche" layoutX="20" layoutY="30" prefHeight="17.0" prefWidth="165.0"/>
-                            <Label fx:id="prixPioche" layoutX="20" layoutY="50" prefHeight="17.0"/>
+
+                            <Label fx:id="prixPioche" layoutX="20" layoutY="50" prefHeight="17.0" value="prixPioche"/>
                             <Label fx:id="niveauPioche" layoutX="20" layoutY="50" prefHeight="17.0"/>
-                            <Button layoutX="30" layoutY="50" mnemonicParsing="false" id="butAchat" onAction="#achat"
-                                    text="LvlUp" userData="but"/>
+                            <Button layoutX="30" layoutY="50" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
+                                    text="LvlUp" userData="Pioche"/>
 
                             <Label fx:id="nomObjet2" layoutX="25" layoutY="10" prefHeight="17.0"/>
                             <Label fx:id="DescriptionObjet2" layoutX="25" layoutY="30" prefHeight="17.0" prefWidth="165.0"/>

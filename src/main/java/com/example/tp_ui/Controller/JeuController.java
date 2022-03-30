@@ -37,9 +37,6 @@ public class JeuController implements Initializable
 
     public JeuController()
     {
-        /*Capacité q = new Capacité();
-        q.setNom("Pioche");
-        magasinObjet.AddItem(q);*/
 
         Objet Pioche = new Objet("Pioche", "Une pioche", 1, 50, (50*2));
         magasinObjet.AddItem(Pioche);
@@ -66,8 +63,8 @@ public class JeuController implements Initializable
         for (Achetable a: magasinObjet.GetItems())
         {
             a.addObserver(j);
-
         }
+
     }
 
     @FXML
