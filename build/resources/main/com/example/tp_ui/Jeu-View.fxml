@@ -39,8 +39,8 @@
                     <content>
                         <AnchorPane>
                             <Label fx:id="Test" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0"/>
-                            <Button layoutX="167.0" layoutY="113.0" mnemonicParsing="false" id="butAchat"
-                                    onAction="#achat" text="LvlUp" userData="but"/>
+                            <Button layoutX="167.0" layoutY="113.0" mnemonicParsing="false" id="PiocheAchat"
+                                    onAction="#achat" text="LvlUp" userData="Pioche"/>
 
                         </AnchorPane>
 

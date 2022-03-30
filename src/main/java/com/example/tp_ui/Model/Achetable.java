@@ -4,7 +4,7 @@ import java.util.Observable;
 
 public abstract class Achetable extends Observable {
     double prix = 2;
-    String nom,Description;
+    String nom,desc;
     int niv = 1;
     boolean typeEffet;
     double effet;
@@ -18,8 +18,8 @@ public abstract class Achetable extends Observable {
     public String getNom(){return nom;}
     public void setNom(String nom){this.nom = nom;}
 
-    public String getDescription() {return Description;}
-    public void setDescription(String description) {Description = description;}
+    public String getDescription() {return desc;}
+    public void setDescription(String description) {desc = description;}
 
     public void addNiv()
     {

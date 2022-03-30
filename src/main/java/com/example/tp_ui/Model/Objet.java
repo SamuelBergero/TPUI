@@ -12,6 +12,11 @@ public class Objet extends Achetable{
         prix = prix + (580 * (0.6 * getNiv()));
     }
 
+    public Objet(String nom, String desc, int niv, double prix, double effet){
+
+    }
+
+
     @Override
     public void addNiv(){
         setPrix(12);

@@ -7,24 +7,24 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class Joueur implements Observer {
-    private int point = 0;
+    private double point = 0;
 
 
-    public int getPoint(){return point;}
+    public double getPoint(){return point;}
     public void setPoint(int point){this.point = point;}
 
     public Joueur(){}
-    public Joueur(int point)
+    public Joueur(double point)
     {
         this.point = point;
     }
 
-    public void addPoint(float change){point += change;}
+    public void addPoint(double change){point += change;}
 
     @Override
     public void update(Observable o, Object arg)
     {
-        float i = Float.parseFloat(arg.toString());
+        double i = Double.parseDouble(arg.toString());
         addPoint(i);
     }
 }

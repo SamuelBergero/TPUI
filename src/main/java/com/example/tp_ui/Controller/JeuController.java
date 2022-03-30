@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 public class JeuController implements Initializable
 {
 
+
     public Label piocheLabel;
     public Label descriptionPioche;
     public Label prixPioche;
@@ -29,22 +30,22 @@ public class JeuController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    j.setPoint(0);
+
+
+
     }
 
     public JeuController()
     {
-        Capacité q = new Capacité();
-        q.setNom("but");
-        magasinObjet.AddItem(q);
+        /*Capacité q = new Capacité();
+        q.setNom("Pioche");
+        magasinObjet.AddItem(q);*/
 
-        Objet Pioche = new Objet();
-        Pioche.setNom("but");
-        Pioche.setDescription("x1.5 vitesse");
-        Pioche.setPrix(1500);
+        Objet Pioche = new Objet("Pioche", "Une pioche", 1, 50, (50*2));
         magasinObjet.AddItem(Pioche);
 
-        Objet Perceuse = new Objet();
+
+        /*Objet Perceuse = new Objet();
         Perceuse.setNom("but");
         Perceuse.setDescription("x3 vitesse");
         Perceuse.setPrix(3000);
@@ -60,7 +61,7 @@ public class JeuController implements Initializable
         Foreuse.setNom("but");
         Foreuse.setDescription("x10 vitesse");
         Foreuse.setPrix(10000);
-        magasinObjet.AddItem(Foreuse);
+        magasinObjet.AddItem(Foreuse);*/
 
         for (Achetable a: magasinObjet.GetItems())
         {
@@ -85,7 +86,7 @@ public class JeuController implements Initializable
         scene = Test.getScene();
         Test.setText("Point: " + j.getPoint());
 
-        int point = j.getPoint();
+        double point = j.getPoint();
         String p;
 
         for (Achetable a: magasinObjet.GetItems())
