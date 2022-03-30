@@ -24,6 +24,10 @@ public class JeuController implements Initializable
     public Label orJoueur;
     @FXML
     public Label orJoueurChiffre;
+
+    public Label prixPioche;
+    public Label niveauPioche;
+
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
     Joueur j = new Joueur();
@@ -58,6 +62,11 @@ public class JeuController implements Initializable
         Capacité Recolte = new Capacité("Recolte", 0, 10,1);
         magasinCapacite.AddItem(Recolte);
 
+        Objet Pioche =new Objet("Pioche", 1,50,2);
+        magasinObjet.AddItem(Pioche);
+        magasinObjet.AddItem(new Objet("Perceuse",1,100,4));
+        magasinObjet.AddItem(new Objet("Nain", 1,250,8));
+        magasinObjet.AddItem(new Objet("Foreuse", 1,500,12));
         for (Achetable a: magasinObjet.GetItems())
         {
             a.addObserver(j);

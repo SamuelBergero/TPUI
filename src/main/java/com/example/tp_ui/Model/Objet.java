@@ -9,9 +9,8 @@ public class Objet extends Achetable{
     }
 
 
-    public Objet(String nom, String desc, int niv, double prix, double effet){
+    public Objet(String nom,int niv, double prix, double effet){
         this.nom = nom;
-        this.desc = desc;
         this.niv = niv;
         this.prix = prix;
         this.effetLvl = effet;
