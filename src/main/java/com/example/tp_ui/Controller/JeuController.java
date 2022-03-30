@@ -16,8 +16,6 @@ public class JeuController implements Initializable
 {
 
 
-    public Label piocheLabel;
-    public Label descriptionPioche;
     public Label prixPioche;
     public Label niveauPioche;
 
@@ -30,36 +28,28 @@ public class JeuController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
-
+//        String nomTemporaire;
+//        scene = prixPioche.getScene();
+//        Label label;
+//
+//        for (Achetable a: magasinObjet.GetItems()) {
+//            nomTemporaire = "#prix"+a.getNom();
+//            label = (Label) scene.lookup(nomTemporaire);
+//            label.setText("Prix : " + a.getPrix());
+//
+//            nomTemporaire = "#niveau"+a.getNom();
+//            label = (Label) scene.lookup(nomTemporaire);
+//            label.setText("Niveau : " + a.getNiv());
+//        }
     }
 
     public JeuController()
     {
-
-        Objet Pioche = new Objet("Pioche", "Une pioche", 1, 50, (50*2));
+        Objet Pioche =new Objet("Pioche", 1,50,2);
         magasinObjet.AddItem(Pioche);
-
-
-        /*Objet Perceuse = new Objet();
-        Perceuse.setNom("but");
-        Perceuse.setDescription("x3 vitesse");
-        Perceuse.setPrix(3000);
-        magasinObjet.AddItem(Perceuse);
-
-        Objet Nain = new Objet();
-        Nain.setNom("but");
-        Nain.setDescription("x5 vitesse");
-        Nain.setPrix(5000);
-        magasinObjet.AddItem(Nain);
-
-        Objet Foreuse = new Objet();
-        Foreuse.setNom("but");
-        Foreuse.setDescription("x10 vitesse");
-        Foreuse.setPrix(10000);
-        magasinObjet.AddItem(Foreuse);*/
-
+        magasinObjet.AddItem(new Objet("Perceuse",1,100,4));
+        magasinObjet.AddItem(new Objet("Nain", 1,250,8));
+        magasinObjet.AddItem(new Objet("Foreuse", 1,500,12));
         for (Achetable a: magasinObjet.GetItems())
         {
             a.addObserver(j);
