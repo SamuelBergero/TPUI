@@ -18,6 +18,12 @@ public class JeuController implements Initializable
 
     public Label prixPioche;
     public Label niveauPioche;
+    public Label prixPerceuse;
+    public Label niveauPerceuse;
+    public Label prixNain;
+    public Label niveauNain;
+    public Label prixForeuse;
+    public Label niveauForeuse;
 
     Magasin magasinObjet = new Magasin("objet");
     Joueur j = new Joueur();
@@ -28,11 +34,21 @@ public class JeuController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Objet Pioche =new Objet("Pioche", 1,50,2);
+        magasinObjet.AddItem(Pioche);
+        magasinObjet.AddItem(new Objet("Perceuse",1,100,4));
+        magasinObjet.AddItem(new Objet("Nain", 1,250,8));
+        magasinObjet.AddItem(new Objet("Foreuse", 1,500,12));
+        for (Achetable a: magasinObjet.GetItems())
+        {
+            a.addObserver(j);
+        }
 //        String nomTemporaire;
 //        scene = prixPioche.getScene();
 //        Label label;
 //
 //        for (Achetable a: magasinObjet.GetItems()) {
+//
 //            nomTemporaire = "#prix"+a.getNom();
 //            label = (Label) scene.lookup(nomTemporaire);
 //            label.setText("Prix : " + a.getPrix());
