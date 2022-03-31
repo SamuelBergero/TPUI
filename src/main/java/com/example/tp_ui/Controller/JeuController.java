@@ -27,6 +27,12 @@ public class JeuController implements Initializable
 
     public Label prixPioche;
     public Label niveauPioche;
+    public Label prixPerceuse;
+    public Label niveauPerceuse;
+    public Label prixNain;
+    public Label niveauNain;
+    public Label prixForeuse;
+    public Label niveauForeuse;
 
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
