@@ -45,7 +45,7 @@
 
                             <Label layoutX="20" layoutY="70" prefHeight="17.0">Pioche</Label>
                             <Label layoutX="20" layoutY="90" prefHeight="17.0">Effet : +2</Label>
-                            <Label fx:id="prixPioche" layoutX="20" layoutY="1100" prefHeight="17.0"/>
+                            <Label fx:id="prixPioche" layoutX="20" layoutY="110" prefHeight="17.0"/>
                             <Label fx:id="niveauPioche" layoutX="20" layoutY="130" prefHeight="17.0"/>
                             <Button layoutX="80" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
                                     text="LvlUp" userData="Pioche"/>
