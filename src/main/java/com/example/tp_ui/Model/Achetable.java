@@ -7,6 +7,7 @@ public abstract class Achetable extends Observable {
     String nom,desc;
     int niv = 0;
     double effetLvl;
+    String Id;
 
     public double getPrix(){return prix;}
     public void setPrix(int prix){this.prix=prix;}
@@ -21,6 +22,11 @@ public abstract class Achetable extends Observable {
     public void setDescription(String description) {desc = description;}
 
     public double getEffet(){return niv * effetLvl;}
+
+    public String getId() {return Id;}
+
+    public void setId(String id) {Id = id;}
+
     public void addNiv()
     {
         niv++;
