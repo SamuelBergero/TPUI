@@ -79,12 +79,29 @@
                 <Tab text="Capacité">
                     <content>
                         <AnchorPane>
-                            <Label fx:id="Test3" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0"/>
-                            <Label fx:id="nomCapacité1" layoutX="164.0" layoutY="96.0" prefHeight="17.0"
+                            <Label fx:id="cap1" layoutX="50" layoutY="50" prefHeight="17.0" prefWidth="165.0"/>
+                            <Label fx:id="nomCapacité1" layoutX="50" layoutY="75" prefHeight="17.0"
                                    prefWidth="165.0"/>
-                            <Button layoutX="50" layoutY="113.0" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button layoutX="50" layoutY="95" mnemonicParsing="false" id="butAchat" onAction="#achat"
                                     text="LvlUp" userData="but"/>
 
+                            <Label fx:id="cap2" layoutX="50" layoutY="115" prefHeight="17.0" prefWidth="165.0"/>
+                            <Label fx:id="nomCapacité2" layoutX="50" layoutY="135" prefHeight="17.0"
+                                   prefWidth="165.0"/>
+                            <Button layoutX="50" layoutY="160" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                                    text="LvlUp" userData="but"/>
+
+                            <Label fx:id="cap3" layoutX="230" layoutY="50" prefHeight="17.0" prefWidth="165.0"/>
+                            <Label fx:id="nomCapacité3" layoutX="230" layoutY="75" prefHeight="17.0"
+                                   prefWidth="165.0"/>
+                            <Button layoutX="230" layoutY="95" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                                    text="LvlUp" userData="but"/>
+
+                            <Label fx:id="cap4" layoutX="230" layoutY="115" prefHeight="17.0" prefWidth="165.0"/>
+                            <Label fx:id="nomCapacité4" layoutX="230" layoutY="135" prefHeight="17.0"
+                                   prefWidth="165.0"/>
+                            <Button layoutX="230" layoutY="160" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                                    text="LvlUp" userData="but"/>
                         </AnchorPane>
 
 

@@ -38,27 +38,10 @@ public class JeuController implements Initializable
     public JeuController()
     {
 
-        Objet Pioche = new Objet("Pioche", "Une pioche", 1, 50, (50*2));
-        magasinObjet.AddItem(Pioche);
-
-
-        /*Objet Perceuse = new Objet();
-        Perceuse.setNom("but");
-        Perceuse.setDescription("x3 vitesse");
-        Perceuse.setPrix(3000);
-        magasinObjet.AddItem(Perceuse);
-
-        Objet Nain = new Objet();
-        Nain.setNom("but");
-        Nain.setDescription("x5 vitesse");
-        Nain.setPrix(5000);
-        magasinObjet.AddItem(Nain);
-
-        Objet Foreuse = new Objet();
-        Foreuse.setNom("but");
-        Foreuse.setDescription("x10 vitesse");
-        Foreuse.setPrix(10000);
-        magasinObjet.AddItem(Foreuse);*/
+        magasinObjet.AddItem(new Capacité("Leadership", "Augmente la production d'or de 50/s pour chaque niveau", 0, 75, 50));
+        magasinObjet.AddItem(new Capacité("Récolte", "Augmente la production de bière de 35/s pour chaque niveau", 0, 130, 35));
+        magasinObjet.AddItem(new Capacité("Technique de forage", "Augmente la production d'or de 250/s pour chaque niveau", 0, 325, 250));
+        magasinObjet.AddItem(new Capacité("Technique de distillerie", "Augmente la production de bière de 160/s pour chaque niveau", 0, 500, 160));
 
         for (Achetable a: magasinObjet.GetItems())
         {

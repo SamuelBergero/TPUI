@@ -6,13 +6,17 @@ public class Capacité extends Achetable {
         prix = prix + (750 * (0.4 * getNiv()));
     }
 
-    public void augPrixPr(){
-        prix = prix + (580 * (0.6 * getNiv()));
+    public Capacité(String nom, String desc, int niv, double prix, double effet){
+        this.nom = nom;
+        this.desc = desc;
+        this.niv = niv;
+        this.prix = prix;
+        this.effetLvl = effet;
     }
 
     @Override
     public void addNiv(){
-        setPrix(12);
+        niv++;
         augPrixCl();
         setChanged();
         notifyObservers(-prix);
