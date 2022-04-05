@@ -27,13 +27,13 @@ public class JeuController implements Initializable
 
     public Label prixPioche;
     @FXML
-    public Label niveauPioche;
+    public Label niveauPioche = new Label("");
     @FXML
-    public Label prixPerceuse;
+    public Label prixPerceuse = new Label("");
     @FXML
-    public Label niveauPerceuse;
+    public Label niveauPerceuse = new Label("");
     @FXML
-    public Label prixNain;
+    public Label prixNain = new Label("");
     @FXML
     public Label niveauNain;
     @FXML
@@ -91,7 +91,8 @@ public class JeuController implements Initializable
             a.addObserver(b);
         }
 
-
+        }
+        
     }
 
     @FXML
