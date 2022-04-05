@@ -16,15 +16,15 @@ public class JeuController implements Initializable
 {
 
     @FXML
-    public Label prixPioche;
+    public Label prixPioche = new Label("");
     @FXML
-    public Label niveauPioche;
+    public Label niveauPioche = new Label("");
     @FXML
-    public Label prixPerceuse;
+    public Label prixPerceuse = new Label("");
     @FXML
-    public Label niveauPerceuse;
+    public Label niveauPerceuse = new Label("");
     @FXML
-    public Label prixNain;
+    public Label prixNain = new Label("");
     @FXML
     public Label niveauNain;
     @FXML
@@ -57,10 +57,9 @@ public class JeuController implements Initializable
         magasinObjet.AddItem(Foreuse);
         for (Achetable a: magasinObjet.GetItems()) {
             a.addObserver(j);
-            
+
         }
-
-
+        
     }
 
     @FXML
