@@ -13,6 +13,8 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
 import java.net.URL;
+import java.nio.channels.Pipe;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class JeuController implements Initializable
@@ -29,17 +31,21 @@ public class JeuController implements Initializable
     @FXML
     public Label niveauPioche = new Label("");
     @FXML
-    public Label prixPerceuse = new Label("");
+    public Label prixPerceuse;
     @FXML
-    public Label niveauPerceuse = new Label("");
+    public Label niveauPerceuse;
     @FXML
-    public Label prixNain = new Label("");
+    public Label prixNain;
     @FXML
     public Label niveauNain;
     @FXML
     public Label prixForeuse;
     @FXML
     public Label niveauForeuse;
+    @FXML
+    public Label titreObjet;
+    ArrayList<Double> prix = new ArrayList<>();
+    ArrayList<Integer> niveau = new ArrayList<>();
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
     Joueur j = new Joueur();
@@ -51,15 +57,16 @@ public class JeuController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        j.setPoint(1000);
-        b.setPoint(100);
-        orJoueurChiffre.setText("" + j.getPoint());
-        titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
-        orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
-        //Attente
-        // orJoueurChiffre.setText();
-
-
+      j.setPoint(0);
+      titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
+      prixPioche.setText(Double.toString(prix.get(0)));
+      prixPerceuse.setText(Double.toString(prix.get(1)));
+      prixNain.setText(Double.toString(prix.get(2)));
+      prixForeuse.setText(Double.toString(prix.get(3)));
+      niveauPioche.setText(Integer.toString(niveau.get(0)));
+      niveauPerceuse.setText(Integer.toString(niveau.get(1)));
+      niveauNain.setText(Integer.toString(niveau.get(2)));
+      niveauForeuse.setText(Integer.toString(niveau.get(3)));
     }
 
     public JeuController()
@@ -84,15 +91,10 @@ public class JeuController implements Initializable
         magasinObjet.AddItem(Foreuse);
         for (Achetable a: magasinObjet.GetItems()) {
             a.addObserver(j);
-            
-        }
-        for (Achetable a: magasinCapacite.GetItems())
-        {
-            a.addObserver(b);
+            prix.add(a.getPrix());
+            niveau.add(a.getNiv());
         }
 
-        }
-        
     }
 
     @FXML

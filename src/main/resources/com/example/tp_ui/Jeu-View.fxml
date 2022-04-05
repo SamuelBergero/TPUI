@@ -41,26 +41,33 @@
                 <Tab text="Magasin">
                     <content>
                         <AnchorPane>
-                            <Label layoutX="120" layoutY="30">À chaque clic, on additionne l'effet de chaque objet par son niveau</Label>
+                            <Label fx:id="titreObjet" layoutX="100" layoutY="30" text="À chaque clic, on additionne l'effet de chaque objet par son niveau"/>
+
 
                             <Label layoutX="20" layoutY="70" prefHeight="17.0">Pioche</Label>
                             <Label layoutX="20" layoutY="90" prefHeight="17.0">Effet : +2</Label>
-                            <Label fx:id="prixPioche" layoutX="20" layoutY="110" prefHeight="17.0">0</Label>
-                            <Label fx:id="niveauPioche" layoutX="20" layoutY="130" prefHeight="17.0">1</Label>
+                            <Label layoutX="20" layoutY="110" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixPioche" layoutX="50" layoutY="110" prefHeight="17.0" text="0"/>
+                            <Label layoutX="20" layoutY="130" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauPioche" layoutX="105" layoutY="130" prefHeight="17.0" text="0"/>
                             <Button layoutX="80" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
                                     text="LvlUp" userData="Pioche"/>
 
                             <Label layoutX="450" layoutY="70" prefHeight="17.0">Perceuse</Label>
                             <Label layoutX="450" layoutY="90" prefHeight="17.0">Effet : +4</Label>
-                            <Label fx:id="prixPerceuse" layoutX="450" layoutY="110" prefHeight="17.0">0</Label>
-                            <Label fx:id="niveauPerceuse" layoutX="450" layoutY="130" prefHeight="17.0">1</Label>
+                            <Label layoutX="450" layoutY="110" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixPerceuse" layoutX="480" layoutY="110" prefHeight="17.0" text="0"/>
+                            <Label layoutX="450" layoutY="130" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauPerceuse" layoutX="535" layoutY="130" prefHeight="17.0" text="0"/>
                             <Button layoutX="520" layoutY="70" mnemonicParsing="false" id="PerceuseAchat" onAction="#achat"
                                     text="LvlUp" userData="Perceuse"/>
 
                             <Label layoutX="20" layoutY="250" prefHeight="17.0">Nain</Label>
                             <Label layoutX="20" layoutY="270" prefHeight="17.0">Effet : +8</Label>
-                            <Label fx:id="prixNain" layoutX="20" layoutY="290" prefHeight="17.0">0</Label>
-                            <Label fx:id="niveauNain" layoutX="20" layoutY="310" prefHeight="17.0">1</Label>
+                            <Label layoutX="20" layoutY="290" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixNain" layoutX="50" layoutY="290" prefHeight="17.0" text="0"/>
+                            <Label layoutX="20" layoutY="310" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauNain" layoutX="105" layoutY="310" prefHeight="17.0" text="0"/>
                             <Button layoutX="80" layoutY="250" mnemonicParsing="false" id="NainAchat" onAction="#achat"
                                     text="LvlUp" userData="Nain"/>
 
