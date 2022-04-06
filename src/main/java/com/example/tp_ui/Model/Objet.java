@@ -3,7 +3,7 @@ package com.example.tp_ui.Model;
 public class Objet extends Achetable{
 
     public void augPrixCl(){
-        prix = prix + (750 * (0.4 * getNiv()));
+       prix = getPrix() * getNiv();
     }
 
 //    public void augPrixPr(){
@@ -20,10 +20,11 @@ public class Objet extends Achetable{
 
     @Override
     public void addNiv(){
-        setPrix(12);
+        setPrix((int) getPrix());
+        setNiv(niv +1);
         augPrixCl();
         setChanged();
-        notifyObservers(-prix);
+        notifyObservers(+prix);
     }
 
 

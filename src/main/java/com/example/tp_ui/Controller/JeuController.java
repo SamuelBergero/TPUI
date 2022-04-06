@@ -59,10 +59,10 @@ public class JeuController implements Initializable
       orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC,14));
       //Attente
      // orJoueurChiffre.setText();
-      prixPioche.setText(Double.toString(prix.get(0)));
-      prixPerceuse.setText(Double.toString(prix.get(1)));
-      prixNain.setText(Double.toString(prix.get(2)));
-      prixForeuse.setText(Double.toString(prix.get(3)));
+      prixPioche.setText(prix.get(0)+" Or");
+      prixPerceuse.setText(prix.get(1)+" Or");
+      prixNain.setText(prix.get(2)+" Or");
+      prixForeuse.setText(prix.get(3)+" Or");
       niveauPioche.setText(Integer.toString(niveau.get(0)));
       niveauPerceuse.setText(Integer.toString(niveau.get(1)));
       niveauNain.setText(Integer.toString(niveau.get(2)));
@@ -86,23 +86,23 @@ public class JeuController implements Initializable
             niveau.add(a.getNiv());
         }
 
+
     }
 
     @FXML
     private void achat(ActionEvent event) {
-        scene = Test.getScene();
+      //  scene = Test.getScene();
         Node node = (Node) event.getSource() ;
         String data = (String) node.getUserData();
 
         Achetable a = magasinObjet.GetItem(data);
-
         a.addNiv();
         updatePoint();
     }
 
     public void updatePoint(){
-        scene = Test.getScene();
-        Test.setText("Point: " + j.getPoint());
+        //scene = Test.getScene();
+        orJoueurChiffre.setText("" + j.getPoint());
 
         double point = j.getPoint();
         String p;
