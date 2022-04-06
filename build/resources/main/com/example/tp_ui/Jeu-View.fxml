@@ -47,38 +47,38 @@
                             <Label fx:id="orJoueurChiffre" layoutX="110" layoutY="40" text="0"/>
                             <!--Information de l'objet 1-->
                             <Label layoutX="20" layoutY="70" prefHeight="17.0">Pioche</Label>
-                            <Label fx:id="effetPioche" layoutX="20" layoutY="90" prefHeight="17.0">Effet : +2/click</Label>
-                            <Label layoutX="20" layoutY="110" prefHeight="17.0">Prix :</Label>
-                            <Label fx:id="prixPioche" layoutX="50" layoutY="110" prefHeight="17.0" text="0"/>
-                            <Label layoutX="20" layoutY="130" prefHeight="17.0">Niveau actuel :</Label>
-                            <Label fx:id="niveauPioche" layoutX="105" layoutY="130" prefHeight="17.0" text="0"/>
+                            <Label layoutX="20" layoutY="90" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixPioche" layoutX="50" layoutY="90" prefHeight="17.0" text="50.0 Or"/>
+                            <Label layoutX="20" layoutY="110" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauPioche" layoutX="105" layoutY="110" prefHeight="17.0" text="0"/>
+                            <Label fx:id="effetPioche" layoutX="20" layoutY="130" prefHeight="17.0">Effet: +2/click</Label>
                             <Button layoutX="110" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
                                     text="LvlUp" userData="Pioche"/>
                             <!--Information de l'objet 2-->
-                            <Label layoutX="450" layoutY="70" prefHeight="17.0">Perceuse</Label>
-                            <Label layoutX="450" layoutY="90" prefHeight="17.0">Effet : +4/click</Label>
-                            <Label layoutX="450" layoutY="110" prefHeight="17.0">Prix :</Label>
-                            <Label fx:id="prixPerceuse" layoutX="480" layoutY="110" prefHeight="17.0" text="0"/>
-                            <Label layoutX="450" layoutY="130" prefHeight="17.0">Niveau actuel :</Label>
-                            <Label fx:id="niveauPerceuse" layoutX="535" layoutY="130" prefHeight="17.0" text="0"/>
+                            <Label layoutX="430" layoutY="70" prefHeight="17.0">Perceuse</Label>
+                            <Label layoutX="430" layoutY="90" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixPerceuse" layoutX="460" layoutY="90" prefHeight="17.0" text="100.0 Or"/>
+                            <Label layoutX="430" layoutY="110" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauPerceuse" layoutX="515" layoutY="110" prefHeight="17.0" text="0"/>
+                            <Label fx:id="effetPerceuse" layoutX="430" layoutY="130" prefHeight="17.0">Effet: +4.0/click</Label>
                             <Button layoutX="540" layoutY="70" mnemonicParsing="false" id="PerceuseAchat" onAction="#achat"
                                     text="LvlUp" userData="Perceuse"/>
                             <!--Information de l'objet 3-->
                             <Label layoutX="20" layoutY="250" prefHeight="17.0">Nain</Label>
-                            <Label layoutX="20" layoutY="270" prefHeight="17.0">Effet : +8/click</Label>
-                            <Label layoutX="20" layoutY="290" prefHeight="17.0">Prix :</Label>
-                            <Label fx:id="prixNain" layoutX="50" layoutY="290" prefHeight="17.0" text="0"/>
-                            <Label layoutX="20" layoutY="310" prefHeight="17.0">Niveau actuel :</Label>
-                            <Label fx:id="niveauNain" layoutX="105" layoutY="310" prefHeight="17.0" text="0"/>
+                            <Label layoutX="20" layoutY="270" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixNain" layoutX="50" layoutY="270" prefHeight="17.0" text="250.0 Or"/>
+                            <Label layoutX="20" layoutY="290" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauNain" layoutX="105" layoutY="290" prefHeight="17.0" text="0"/>
+                            <Label fx:id="effetNain" layoutX="20" layoutY="310" prefHeight="17.0">Effet: +8.0/click</Label>
                             <Button layoutX="110" layoutY="250" mnemonicParsing="false" id="NainAchat" onAction="#achat"
                                     text="LvlUp" userData="Nain"/>
                             <!--Information de l'objet 4-->
-                            <Label layoutX="450" layoutY="250" prefHeight="17.0">Foreuse</Label>
-                            <Label layoutX="450" layoutY="270" prefHeight="17.0">Effet : +12/click</Label>
-                            <Label layoutX="450" layoutY="290" prefHeight="17.0">Prix :</Label>
-                            <Label fx:id="prixForeuse" layoutX="480" layoutY="290" prefHeight="17.0" text="0"/>
-                            <Label layoutX="450" layoutY="310" prefHeight="17.0">Niveau actuel :</Label>
-                            <Label fx:id="niveauForeuse" layoutX="535" layoutY="310" prefHeight="17.0" text="0"/>
+                            <Label layoutX="430" layoutY="250" prefHeight="17.0">Foreuse</Label>
+                            <Label layoutX="430" layoutY="270" prefHeight="17.0">Prix :</Label>
+                            <Label fx:id="prixForeuse" layoutX="460" layoutY="270" prefHeight="17.0" text="500.0 Or"/>
+                            <Label layoutX="430" layoutY="290" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label fx:id="niveauForeuse" layoutX="515" layoutY="290" prefHeight="17.0" text="0"/>
+                            <Label fx:id="effetForeuse" layoutX="430" layoutY="310" prefHeight="17.0">Effet : +12/click</Label>
                             <Button layoutX="540" layoutY="250" mnemonicParsing="false" id="ForeuseAchat" onAction="#achat"
                                     text="LvlUp" userData="Foreuse"/>
 
