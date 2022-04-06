@@ -1,7 +1,5 @@
 package com.example.tp_ui.Model;
 
-import java.util.ArrayList;
-
 public class Objet extends Achetable{
 
     public void augPrixCl(){
@@ -9,7 +7,7 @@ public class Objet extends Achetable{
     }
 
 
-    public Objet(String nom,int niv, double prix, double effet,String ID){
+    public Objet(String nom,int niv, double prix, double effet){
         this.nom = nom;
         this.niv = niv;
         this.prix = prix;
