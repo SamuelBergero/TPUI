@@ -21,6 +21,7 @@ public class MainController {
     public void onMagasinButton() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Jeu-View.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+
         Stage stage = new Stage();
         stage.setTitle("Clicker");
         stage.setScene(scene);

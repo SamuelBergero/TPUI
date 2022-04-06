@@ -18,8 +18,7 @@ import java.nio.channels.Pipe;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class JeuController implements Initializable
-{
+public class JeuController implements Initializable {
 
     @FXML
     public Label titreObjet;
@@ -58,27 +57,26 @@ public class JeuController implements Initializable
 
     @FXML
     private Label Test;
-    private Scene scene ;
+    private Scene scene;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      j.setPoint(0);
-      titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
-      orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC,14));
-      //Attente
-     // orJoueurChiffre.setText();
-      prixPioche.setText(prix.get(0)+" Or");
-      prixPerceuse.setText(prix.get(1)+" Or");
-      prixNain.setText(prix.get(2)+" Or");
-      prixForeuse.setText(prix.get(3)+" Or");
-      niveauPioche.setText(Integer.toString(niveau.get(0)));
-      niveauPerceuse.setText(Integer.toString(niveau.get(1)));
-      niveauNain.setText(Integer.toString(niveau.get(2)));
-      niveauForeuse.setText(Integer.toString(niveau.get(3)));
+        j.setPoint(0);
+        titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
+        orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
+        //Attente
+        // orJoueurChiffre.setText();
+        prixPioche.setText(prix.get(0) + " Or");
+        prixPerceuse.setText(prix.get(1) + " Or");
+        prixNain.setText(prix.get(2) + " Or");
+        prixForeuse.setText(prix.get(3) + " Or");
+        niveauPioche.setText(Integer.toString(niveau.get(0)));
+        niveauPerceuse.setText(Integer.toString(niveau.get(1)));
+        niveauNain.setText(Integer.toString(niveau.get(2)));
+        niveauForeuse.setText(Integer.toString(niveau.get(3)));
     }
 
-    public JeuController()
-    {
+    public JeuController() {
 
         Capacité Leadership = new Capacité("Leadership", 0, 1, 0.1);
         magasinCapacite.AddItem(Leadership);
@@ -91,13 +89,13 @@ public class JeuController implements Initializable
 
         Objet Pioche =new Objet("Pioche", 1,50,2);
         magasinObjet.AddItem(Pioche);
-        Objet Perceuse =new Objet("Perceuse",0,100,4);
+        Objet Perceuse = new Objet("Perceuse", 0, 100, 4);
         magasinObjet.AddItem(Perceuse);
-        Objet Nain =new Objet("Nain", 0,250,8);
+        Objet Nain = new Objet("Nain", 0, 250, 8);
         magasinObjet.AddItem(Nain);
-        Objet Foreuse =new Objet("Foreuse", 0,500,12);
+        Objet Foreuse = new Objet("Foreuse", 0, 500, 12);
         magasinObjet.AddItem(Foreuse);
-        for (Achetable a: magasinObjet.GetItems()) {
+        for (Achetable a : magasinObjet.GetItems()) {
             a.addObserver(j);
             prix.add(a.getPrix());
             niveau.add(a.getNiv());
@@ -115,6 +113,19 @@ public class JeuController implements Initializable
 
         Achetable a = magasinCapacite.GetItem(data);
         a.addNiv();
+
+        String prix = "#prix" + data ;
+        Label labelprix = (Label) scene.lookup(prix);
+        labelprix.setText(a.getPrix() + "");
+
+        String niv = "#niveau" + data ;
+        Label labelniv = (Label) scene.lookup(niv);
+        labelniv.setText(a.getPrix() + "");
+
+
+        String eff = "#effet" + data ;
+        Label labeleff = (Label) scene.lookup(eff);
+        labeleff.setText("Effet: +"+a.getEffet() + "/click");
         updatePoint();
 
         String prixc = "#prixc" + data ;
@@ -132,22 +143,20 @@ public class JeuController implements Initializable
         updatePoint();
     }
 
-    public void updatePoint(){
-        //scene = Test.getScene();
+    public void updatePoint() {
+        scene = orJoueur.getScene();
         orJoueurChiffre.setText("" + j.getPoint());
 
         double point = j.getPoint();
         String p;
 
-        for (Achetable a: magasinObjet.GetItems())
-        {
-            if(a.getPrix() > point)
-            {
+        for (Achetable a : magasinObjet.GetItems()) {
+            if (a.getPrix() > point) {
                 try {
                     p = "#" + a.getNom() + "Achat";
                     Button button = (Button) scene.lookup(p);
                     button.setDisable(true);
-                }catch(Exception e){
+                } catch (Exception e) {
                 }
             }
 
@@ -165,6 +174,7 @@ public class JeuController implements Initializable
 
         updatePoint();
     }
+}
 
 }
 
