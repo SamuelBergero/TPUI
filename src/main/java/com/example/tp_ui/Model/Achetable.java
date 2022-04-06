@@ -23,10 +23,6 @@ public abstract class Achetable extends Observable {
 
     public double getEffet(){return niv * effetLvl;}
 
-    public String getId() {return Id;}
-
-    public void setId(String id) {Id = id;}
-
     public void addNiv()
     {
         niv++;
