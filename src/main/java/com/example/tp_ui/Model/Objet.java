@@ -6,9 +6,9 @@ public class Objet extends Achetable{
         prix = prix + (750 * (0.4 * getNiv()));
     }
 
-    public void augPrixPr(){
-        prix = prix + (580 * (0.6 * getNiv()));
-    }
+//    public void augPrixPr(){
+//        prix = prix + (580 * (0.6 * getNiv()));
+//    }
 
     public Objet(String nom,int niv, double prix, double effet){
         this.nom = nom;
