@@ -11,7 +11,7 @@ public class Joueur implements Observer {
 
 
     public double getPoint(){return point;}
-    public void setPoint(int point){this.point = point;}
+    public void setPoint(double point){this.point = point;}
 
     public Joueur(){}
     public Joueur(double point)
@@ -19,12 +19,12 @@ public class Joueur implements Observer {
         this.point = point;
     }
 
-    public void addPoint(double change){point += change;}
+    public void addPoint(int change){point += change;}
 
     @Override
     public void update(Observable o, Object arg)
     {
         double i = Double.parseDouble(arg.toString());
-        addPoint(i);
+        addPoint((int) i);
     }
 }

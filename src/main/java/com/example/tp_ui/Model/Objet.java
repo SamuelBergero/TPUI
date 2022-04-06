@@ -3,14 +3,18 @@ package com.example.tp_ui.Model;
 public class Objet extends Achetable{
 
     public void augPrixCl(){
-       prix = (getPrix() * getNiv());
+        if (niv <=1){
+       prix +=getEffet() +2;}
+        else{
+            prix +=getEffet();
+        }
     }
 
 //    public void augPrixPr(){
 //        prix = prix + (580 * (0.6 * getNiv()));
 //    }
 
-    public Objet(String nom,int niv, double prix, double effet){
+    public Objet(String nom,int niv, int prix, double effet){
         this.nom = nom;
         this.niv = niv;
         this.prix = prix;
@@ -20,11 +24,10 @@ public class Objet extends Achetable{
 
     @Override
     public void addNiv(){
-        setPrix((int) getPrix());
-        setNiv(niv +1);
-        augPrixCl();
         setChanged();
         notifyObservers(-prix);
+        augPrixCl();
+        setNiv(niv +1);
     }
 
 
