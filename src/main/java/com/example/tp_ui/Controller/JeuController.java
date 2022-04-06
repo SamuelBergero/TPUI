@@ -8,7 +8,9 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
 import java.net.URL;
@@ -37,6 +39,10 @@ public class JeuController implements Initializable
     public Label niveauForeuse;
     @FXML
     public Label titreObjet;
+    @FXML
+    public Label orJoueur;
+    @FXML
+    public Label orJoueurChiffre;
     ArrayList<Double> prix = new ArrayList<>();
     ArrayList<Integer> niveau = new ArrayList<>();
     Magasin magasinObjet = new Magasin("objet");
@@ -50,6 +56,9 @@ public class JeuController implements Initializable
     public void initialize(URL location, ResourceBundle resources) {
       j.setPoint(0);
       titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
+      orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC,14));
+      //Attente
+     // orJoueurChiffre.setText();
       prixPioche.setText(Double.toString(prix.get(0)));
       prixPerceuse.setText(Double.toString(prix.get(1)));
       prixNain.setText(Double.toString(prix.get(2)));
@@ -63,13 +72,13 @@ public class JeuController implements Initializable
     public JeuController()
     {
 
-        Objet Pioche =new Objet("Pioche", 1,50,2,"PiocheAchat");
+        Objet Pioche =new Objet("Pioche", 0,50,2);
         magasinObjet.AddItem(Pioche);
-        Objet Perceuse =new Objet("Perceuse",1,100,4,"PerceuseAchat");
+        Objet Perceuse =new Objet("Perceuse",0,100,4);
         magasinObjet.AddItem(Perceuse);
-        Objet Nain =new Objet("Nain", 1,250,8,"NainAchat");
+        Objet Nain =new Objet("Nain", 0,250,8);
         magasinObjet.AddItem(Nain);
-        Objet Foreuse =new Objet("Foreuse", 1,500,12,"ForeuseAchat");
+        Objet Foreuse =new Objet("Foreuse", 0,500,12);
         magasinObjet.AddItem(Foreuse);
         for (Achetable a: magasinObjet.GetItems()) {
             a.addObserver(j);
