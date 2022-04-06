@@ -52,7 +52,7 @@
                             <Label fx:id="prixPioche" layoutX="50" layoutY="110" prefHeight="17.0" text="0"/>
                             <Label layoutX="20" layoutY="130" prefHeight="17.0">Niveau actuel :</Label>
                             <Label fx:id="niveauPioche" layoutX="105" layoutY="130" prefHeight="17.0" text="0"/>
-                            <Button layoutX="100" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
+                            <Button layoutX="110" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
                                     text="LvlUp" userData="Pioche"/>
                             <!--Information de l'objet 2-->
                             <Label layoutX="450" layoutY="70" prefHeight="17.0">Perceuse</Label>
@@ -70,7 +70,7 @@
                             <Label fx:id="prixNain" layoutX="50" layoutY="290" prefHeight="17.0" text="0"/>
                             <Label layoutX="20" layoutY="310" prefHeight="17.0">Niveau actuel :</Label>
                             <Label fx:id="niveauNain" layoutX="105" layoutY="310" prefHeight="17.0" text="0"/>
-                            <Button layoutX="100" layoutY="250" mnemonicParsing="false" id="NainAchat" onAction="#achat"
+                            <Button layoutX="110" layoutY="250" mnemonicParsing="false" id="NainAchat" onAction="#achat"
                                     text="LvlUp" userData="Nain"/>
                             <!--Information de l'objet 4-->
                             <Label layoutX="450" layoutY="250" prefHeight="17.0">Foreuse</Label>
