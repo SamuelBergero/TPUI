@@ -203,7 +203,6 @@ public class JeuController implements Initializable {
             effet += a.getEffet();
         }
         j.addPoint(effet);
-
         updatePoint();
     }
 }
