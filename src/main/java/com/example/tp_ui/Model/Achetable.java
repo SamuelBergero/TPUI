@@ -3,7 +3,7 @@ package com.example.tp_ui.Model;
 import java.util.Observable;
 
 public abstract class Achetable extends Observable {
-    int prix;
+    double prix;
     String nom;
     int niv = 0;
     double effetLvl;

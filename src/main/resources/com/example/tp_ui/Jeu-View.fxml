@@ -99,7 +99,7 @@
                             <Label fx:id="nivCap1" layoutX="70" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="20" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="90" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button layoutX="90" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
 
                             <!-- Information de la capacité 2 -->
@@ -113,7 +113,7 @@
                             <Label fx:id="nivCap2" layoutX="70" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="20" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="90" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button layoutX="90" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
 
                             <!-- Information de la capacité 3 -->
@@ -127,7 +127,7 @@
                             <Label fx:id="nivCap3" layoutX="400" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="350" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="430" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button layoutX="430" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
 
                             <!--Information de la capacité 4-->
@@ -141,7 +141,7 @@
                             <Label fx:id="nivCap4" layoutX="400" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="350" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="430" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button layoutX="430" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
                         </AnchorPane>
 

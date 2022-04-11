@@ -66,8 +66,8 @@ public class JeuController implements Initializable {
         Node node = (Node) event.getSource();
         String data = (String) node.getUserData();
 
-
         Achetable a = magasinCapacite.GetItem(data);
+
         a.addNiv();
         updatePoint();
         String prix = "#prix" + data ;
@@ -88,14 +88,33 @@ public class JeuController implements Initializable {
         Label labelprixc = (Label) scene.lookup(prixc);
         labelprixc.setText(a.getPrix() + " points");
 
+        updatePoint();
+    }
+
+    @FXML
+    private void achat(ActionEvent event) {
+        scene = orJoueur.getScene();
+        Node node = (Node) event.getSource();
+        String data = (String) node.getUserData();
+
+
+        Achetable a = magasinObjet.GetItem(data);
+        a.addNiv();
+
+        String prix = "#prix" + data ;
+        Label labelprix = (Label) scene.lookup(prix);
+        labelprix.setText(a.getPrix() + "");
+
         String niv = "#niveau" + data ;
         Label labelniv = (Label) scene.lookup(niv);
-        labelniv.setText(a.getNiv() + "");
+        labelniv.setText(a.getPrix() + "");
 
 
         String eff = "#effet" + data ;
         Label labeleff = (Label) scene.lookup(eff);
         labeleff.setText("Effet: +"+a.getEffet() + "/click");
+        updatePoint();
+
         updatePoint();
     }
 
@@ -121,12 +140,10 @@ public class JeuController implements Initializable {
         for (Achetable a : magasinCapacite.GetItems()) {
             effet += a.getEffet();
         }
-        b.addPoint(effet);
+        j.addPoint(effet);
 
         updatePoint();
     }
-}
-
 }
 
 

@@ -19,7 +19,7 @@ public class Joueur implements Observer {
         this.point = point;
     }
 
-    public void addPoint(int change){point += change;}
+    public void addPoint(double change){point += change;}
 
     @Override
     public void update(Observable o, Object arg)
