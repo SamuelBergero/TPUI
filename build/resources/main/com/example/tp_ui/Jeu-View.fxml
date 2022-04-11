@@ -5,20 +5,15 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_ui.Controller.JeuController">
     <center>
-<<<<<<< main
-        <TabPane fx:id="tabPane" prefHeight="395.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE"
-                 BorderPane.alignment="CENTER">
-            <!-- Section de la ressource principale -->
-=======
-        <Label fx:id="Test" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0" />
         <TabPane fx:id="tabPane" prefHeight="395.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
->>>>>>> UpdateView
+            <!-- Section de la ressource principale -->
             <tabs>
-                <Tab fx:id="mainMenu" text="Jeu">
+                <Tab fx:id="Or" text="Jeu">
                     <content>
                         <AnchorPane>
                             <children>
-                                <Label fx:id="prixTestlabel" layoutX="164.0" layoutY="96.0" prefHeight="17.0" prefWidth="165.0" />
+                                <Label fx:id="AffOr" layoutX="157.0" layoutY="53.0" text="Or du joueur :" />
+                                <Button layoutX="157.0" layoutY="81.0" mnemonicParsing="false" onAction="#clickRessourceA" prefHeight="160.0" prefWidth="197.0" text="Click" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -26,11 +21,12 @@
             </tabs>
             <!-- Section de la ressource secondaire -->
             <tabs>
-                <Tab text="Ressource">
+                <Tab text="Bière">
                     <content>
                         <AnchorPane>
                             <children>
-
+                                <Label fx:id="AffBiere" layoutX="249.0" layoutY="80.0" />
+                                <Button layoutX="186.0" layoutY="117.0" mnemonicParsing="false" onAction="#clickRessourceB" prefHeight="142.0" prefWidth="199.0" text="Click" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -86,109 +82,70 @@
                     </content>
                 </Tab>
             </tabs>
-                <Tab text="Capacité">
-                    <content>
-                        <AnchorPane>
-                            <!-- Label pour informations générales -->
-                            <Label layoutX="150" text="1 point de capacité par 100 ressources produites"/>
-                            <Label layoutX="200" layoutY="20" text="Points disponibles :" />
+            <Tab text="Capacité">
+                <content>
+                    <AnchorPane>
+                        <!-- Label pour informations générales -->
+                        <Label layoutX="150" text="Achat avec la bière"/>
+                        <Label fx:id="points" layoutX="200" layoutY="20" text="Bières disponibles :" />
+                        <!--Information de la capacité 1-->
+                        <Label fx:id="nomLeadership" layoutX="20" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Leadership"/>
+                        <Label fx:id="effetLeadership" layoutX="70" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="0.1/click"/>
+                        <Label layoutX="20" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-<<<<<<< main
-                            <Label fx:id="nivCompetence" layoutX="70" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="20" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
+                        <Label fx:id="prixLeadership" layoutX="70" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="1"/>
+                        <Label layoutX="20" layoutY="90" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
-                            <Button fx:id="CompetenceAchat" layoutX="90" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achatc"
-                                    text="+" userData="but"/>
+                        <Label fx:id="nivLeadership" layoutX="70" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
+                        <Label layoutX="20" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <!-- Information de la capacité 3 -->
-                            <Label fx:id="nomForage" layoutX="350" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Technique de forage"/>
-                            <Label fx:id="effetForage" layoutX="400" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="250/s"/>
-                            <Label layoutX="350" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
+                        <Button disable="true" fx:id="LeadershipAchat" layoutX="90" layoutY="110" mnemonicParsing="false" onAction="#achatc"
+                                text="+" userData="Leadership"/>
 
-                            <Label fx:id="prixcForage" layoutX="400" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="1"/>
-                            <Label layoutX="350" layoutY="90" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
+                        <!-- Information de la capacité 2 -->
+                        <Label fx:id="nomCompetence" layoutX="20" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Compétence de minage"/>
+                        <Label fx:id="effetCompetence" layoutX="70" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="0.4/click"/>
+                        <Label layoutX="20" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-                            <Label fx:id="nivForage" layoutX="400" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="350" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
+                        <Label fx:id="prixCompetence" layoutX="70" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="4"/>
+                        <Label layoutX="20" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
-                            <Button fx:id="ForageAchat"  layoutX="430" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achatc"
-                                    text="+" userData="but"/>
+                        <Label fx:id="nivCompetence" layoutX="70" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
+                        <Label layoutX="20" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <!--Information de la capacité 4-->
-                            <Label fx:id="nomRecolte" layoutX="350" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Récolte"/>
-                            <Label fx:id="effetRecolte" layoutX="400" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="160/s"/>
-                            <Label layoutX="350" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
+                        <Button disable="true" fx:id="CompetenceAchat" layoutX="90" layoutY="280" mnemonicParsing="false" onAction="#achatc"
+                                text="+" userData="Competence"/>
 
-                            <Label fx:id="prixcRecolte" layoutX="400" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="1"/>
-                            <Label layoutX="350" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
+                        <!-- Information de la capacité 3 -->
+                        <Label fx:id="nomForage" layoutX="350" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Technique de forage"/>
+                        <Label fx:id="effetForage" layoutX="400" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="0.8/click"/>
+                        <Label layoutX="350" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-                            <Label fx:id="nivRecolte" layoutX="400" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="350" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
+                        <Label fx:id="prixForage" layoutX="400" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="8"/>
+                        <Label layoutX="350" layoutY="90" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
-                            <Button fx:id="RecolteAchat" layoutX="430" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achatc"
-=======
-                            <!--Information de la capacité 1-->
-                            <Label fx:id="nomCapacité1" layoutX="20" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Leadership"/>
-                            <Label fx:id="effetCap1" layoutX="70" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="50/s"/>
-                            <Label layoutX="20" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
+                        <Label fx:id="nivForage" layoutX="400" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
+                        <Label layoutX="350" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Label fx:id="prixCap1" layoutX="70" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="1"/>
-                            <Label layoutX="20" layoutY="90" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
+                        <Button disable="true" fx:id="ForageAchat"  layoutX="430" layoutY="110" mnemonicParsing="false" onAction="#achatc"
+                                text="+" userData="Forage"/>
 
-                            <Label fx:id="nivCap1" layoutX="70" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="20" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
+                        <!--Information de la capacité 4-->
+                        <Label fx:id="nomRecolte" layoutX="350" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Récolte"/>
+                        <Label fx:id="effetRecolte" layoutX="400" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="1/click"/>
+                        <Label layoutX="350" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-                            <Button layoutX="90" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achat"
-                                    text="+" userData="but"/>
+                        <Label fx:id="prixRecolte" layoutX="400" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="10"/>
+                        <Label layoutX="350" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
-                            <!-- Information de la capacité 2 -->
-                            <Label fx:id="nomCapacité2" layoutX="20" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Récolte"/>
-                            <Label fx:id="effetCap2" layoutX="70" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="35/s"/>
-                            <Label layoutX="20" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
+                        <Label fx:id="nivRecolte" layoutX="400" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
+                        <Label layoutX="350" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Label fx:id="prixCap2" layoutX="70" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="1"/>
-                            <Label layoutX="20" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
-
-                            <Label fx:id="nivCap2" layoutX="70" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="20" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
-
-                            <Button layoutX="90" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achat"
-                                    text="+" userData="but"/>
-
-                            <!-- Information de la capacité 3 -->
-                            <Label fx:id="nomCapacité3" layoutX="350" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Technique de forage"/>
-                            <Label fx:id="effetCap3" layoutX="400" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="250/s"/>
-                            <Label layoutX="350" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
-
-                            <Label fx:id="prixCap3" layoutX="400" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="1"/>
-                            <Label layoutX="350" layoutY="90" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
-
-                            <Label fx:id="nivCap3" layoutX="400" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="350" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
-
-                            <Button layoutX="430" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achat"
-                                    text="+" userData="but"/>
-
-                            <!--Information de la capacité 4-->
-                            <Label fx:id="nomCapacité4" layoutX="350" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Technique de distillerie"/>
-                            <Label fx:id="effetCap4" layoutX="400" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="160/s"/>
-                            <Label layoutX="350" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
-
-                            <Label fx:id="prixCap4" layoutX="400" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="1"/>
-                            <Label layoutX="350" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
-
-                            <Label fx:id="nivCap4" layoutX="400" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
-                            <Label layoutX="350" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
-
-                            <Button layoutX="430" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achat"
->>>>>>> Ajout partie Mathieu
-                                    text="+" userData="but"/>
-                        </AnchorPane>
-
-
-                    </content>
-                </Tab>
-
+                        <Button disable="true" fx:id="RecolteAchat" layoutX="430" layoutY="280" mnemonicParsing="false" onAction="#achatc"
+                                text="+" userData="Recolte"/>
+                    </AnchorPane>
+                </content>
+            </Tab>
 
         </TabPane>
     </center>

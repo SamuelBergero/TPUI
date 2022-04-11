@@ -25,6 +25,6 @@ public class Joueur implements Observer {
     public void update(Observable o, Object arg)
     {
         double i = Double.parseDouble(arg.toString());
-        addPoint((int) i);
+        addPoint(i);
     }
 }

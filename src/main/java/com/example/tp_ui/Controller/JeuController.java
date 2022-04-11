@@ -13,6 +13,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.nio.channels.Pipe;
 import java.util.ArrayList;
@@ -26,6 +28,15 @@ public class JeuController implements Initializable {
     public Label orJoueur;
     @FXML
     public Label orJoueurChiffre;
+
+    @FXML
+    public Label AffOr;
+    @FXML
+    public Label AffBiere;
+
+    @FXML
+    public Label points;
+
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
     Joueur j = new Joueur();
@@ -41,11 +52,10 @@ public class JeuController implements Initializable {
         orJoueurChiffre.setText("" + j.getPoint());
         titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
         orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
-        //Attente
-        // orJoueurChiffre.setText();
     }
 
     public JeuController() {
+
         Objet Pioche = new Objet("Pioche", 0, 50, 2);
         magasinObjet.AddItem(Pioche);
         Objet Perceuse = new Objet("Perceuse", 0, 100, 4);
@@ -54,10 +64,24 @@ public class JeuController implements Initializable {
         magasinObjet.AddItem(Nain);
         Objet Foreuse = new Objet("Foreuse", 0, 500, 12);
         magasinObjet.AddItem(Foreuse);
-        for (Achetable a : magasinObjet.GetItems()) {
+
+        Capacité Leadership = new Capacité("Leadership", 0, 1, 0.1);
+        magasinCapacite.AddItem(Leadership);
+        Capacité Competence = new Capacité("Competence", 0, 4, 0.4);
+        magasinCapacite.AddItem(Competence);
+        Capacité Forage = new Capacité("Forage", 0, 8, 0.8);
+        magasinCapacite.AddItem(Forage);
+        Capacité Recolte = new Capacité("Recolte", 0, 10,1);
+        magasinCapacite.AddItem(Recolte);
+
+        for (Achetable a: magasinObjet.GetItems())
+        {
             a.addObserver(j);
         }
-
+        for (Achetable a: magasinCapacite.GetItems())
+        {
+            a.addObserver(b);
+        }
     }
 
     @FXML
@@ -69,12 +93,12 @@ public class JeuController implements Initializable {
         Achetable a = magasinCapacite.GetItem(data);
 
         a.addNiv();
-        updatePoint();
+
         String prix = "#prix" + data ;
         Label labelprix = (Label) scene.lookup(prix);
-        labelprix.setText(a.getPrix() + " Or");
+        labelprix.setText(a.getPrix() + " Bière");
 
-        String niv = "#niveau" + data ;
+        String niv = "#niv" + data ;
         Label labelniv = (Label) scene.lookup(niv);
         labelniv.setText(a.getNiv() + "");
 
@@ -82,11 +106,6 @@ public class JeuController implements Initializable {
         String eff = "#effet" + data ;
         Label labeleff = (Label) scene.lookup(eff);
         labeleff.setText("Effet: +"+a.getEffet() + "/click");
-        updatePoint();
-
-        String prixc = "#prixc" + data ;
-        Label labelprixc = (Label) scene.lookup(prixc);
-        labelprixc.setText(a.getPrix() + " points");
 
         updatePoint();
     }
@@ -119,6 +138,7 @@ public class JeuController implements Initializable {
     }
 
     public void updatePoint() {
+        scene = orJoueur.getScene();
                 for (Achetable a : magasinObjet.GetItems()) {
                     if (a.getPrix() > j.getPoint()) {
                         try {
@@ -128,16 +148,58 @@ public class JeuController implements Initializable {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
+                    }else{
+                        try {
+                            String p = "#" + a.getNom() + "Achat";
+                            Button button = (Button) scene.lookup(p);
+                            button.setDisable(false);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
+                }
+
+        for (Achetable a : magasinCapacite.GetItems()) {
+            if (a.getPrix() > b.getPoint()) {
+                try {
+                    String p = "#" + a.getNom() + "Achat";
+                    Button button = (Button) scene.lookup(p);
+                    button.setDisable(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else{
+                try {
+                    String p = "#" + a.getNom() + "Achat";
+                    Button button = (Button) scene.lookup(p);
+                    button.setDisable(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
         orJoueurChiffre.setText("" + j.getPoint());
-
+        AffOr.setText("" + j.getPoint());
+        b.setPoint(new BigDecimal(b.getPoint()).setScale(2, RoundingMode.HALF_UP).doubleValue());
+        AffBiere.setText("" + b.getPoint());
+        points.setText("Bières disponibles :" + b.getPoint());
     }
 
     public void clickRessourceB() {
-        double effet = 0.5;
+        double effet = 0.1;
 
         for (Achetable a : magasinCapacite.GetItems()) {
+            effet += a.getEffet();
+        }
+        b.addPoint(effet);
+
+        updatePoint();
+    }
+
+    public void clickRessourceA() {
+        double effet = 1;
+
+        for (Achetable a : magasinObjet.GetItems()) {
             effet += a.getEffet();
         }
         j.addPoint(effet);
