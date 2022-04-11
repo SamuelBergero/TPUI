@@ -62,7 +62,7 @@
 
                             <!--Information de la capacité 1-->
                             <Label fx:id="nomLeadership" layoutX="20" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Leadership"/>
-                            <Label fx:id="effetLeadership" layoutX="70" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="50/s"/>
+                            <Label fx:id="effetLeadership" layoutX="70" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="0.1/click"/>
                             <Label layoutX="20" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
                             <Label fx:id="prixcLeadership" layoutX="70" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="1"/>
@@ -76,10 +76,10 @@
 
                             <!-- Information de la capacité 2 -->
                             <Label fx:id="nomCompetence" layoutX="20" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Compétence de minage"/>
-                            <Label fx:id="effetCompetence" layoutX="70" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="35/s"/>
+                            <Label fx:id="effetCompetence" layoutX="70" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="0.4/click"/>
                             <Label layoutX="20" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-                            <Label fx:id="prixcCompetence" layoutX="70" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="1"/>
+                            <Label fx:id="prixcCompetence" layoutX="70" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="4"/>
                             <Label layoutX="20" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
                             <Label fx:id="nivCompetence" layoutX="70" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
@@ -90,10 +90,10 @@
 
                             <!-- Information de la capacité 3 -->
                             <Label fx:id="nomForage" layoutX="350" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Technique de forage"/>
-                            <Label fx:id="effetForage" layoutX="400" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="250/s"/>
+                            <Label fx:id="effetForage" layoutX="400" layoutY="70" prefHeight="17.0" prefWidth="165.0" text="0.8/click"/>
                             <Label layoutX="350" layoutY="70" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-                            <Label fx:id="prixcForage" layoutX="400" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="1"/>
+                            <Label fx:id="prixcForage" layoutX="400" layoutY="90" prefHeight="17.0" prefWidth="165.0" text="8"/>
                             <Label layoutX="350" layoutY="90" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
                             <Label fx:id="nivForage" layoutX="400" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
@@ -104,10 +104,10 @@
 
                             <!--Information de la capacité 4-->
                             <Label fx:id="nomRecolte" layoutX="350" layoutY="220" prefHeight="17.0" prefWidth="165.0" text="Récolte"/>
-                            <Label fx:id="effetRecolte" layoutX="400" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="160/s"/>
+                            <Label fx:id="effetRecolte" layoutX="400" layoutY="240" prefHeight="17.0" prefWidth="165.0" text="1/click"/>
                             <Label layoutX="350" layoutY="240" prefHeight="17.0" prefWidth="165.0" text = "Effet :"/>
 
-                            <Label fx:id="prixcRecolte" layoutX="400" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="1"/>
+                            <Label fx:id="prixcRecolte" layoutX="400" layoutY="260" prefHeight="17.0" prefWidth="165.0" text="10"/>
                             <Label layoutX="350" layoutY="260" prefHeight="17.0" prefWidth="165.0" text = "Prix :"/>
 
                             <Label fx:id="nivRecolte" layoutX="400" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>

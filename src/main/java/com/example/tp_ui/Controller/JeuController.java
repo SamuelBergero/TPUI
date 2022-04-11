@@ -49,13 +49,13 @@ public class JeuController implements Initializable
     public JeuController()
     {
 
-        Capacité Leadership = new Capacité("Leadership", 0, 1, 15);
+        Capacité Leadership = new Capacité("Leadership", 0, 1, 0.1);
         magasinCapacite.AddItem(Leadership);
-        Capacité Competence = new Capacité("Competence", 0, 5, 60);
+        Capacité Competence = new Capacité("Competence", 0, 4, 0.4);
         magasinCapacite.AddItem(Competence);
-        Capacité Forage = new Capacité("Forage", 0, 8, 95);
+        Capacité Forage = new Capacité("Forage", 0, 8, 0.8);
         magasinCapacite.AddItem(Forage);
-        Capacité Recolte = new Capacité("Recolte", 0, 10,5);
+        Capacité Recolte = new Capacité("Recolte", 0, 10,1);
         magasinCapacite.AddItem(Recolte);
 
         for (Achetable a: magasinObjet.GetItems())
@@ -64,7 +64,7 @@ public class JeuController implements Initializable
         }
         for (Achetable a: magasinCapacite.GetItems())
         {
-            a.addObserver(j);
+            a.addObserver(b);
         }
 
     }
