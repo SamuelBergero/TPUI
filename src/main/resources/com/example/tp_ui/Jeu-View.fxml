@@ -57,8 +57,8 @@
                     <content>
                         <AnchorPane>
                             <!-- Label pour informations générales -->
-                            <Label layoutX="150" text="1 point de capacité par 100 ressources produites"/>
-                            <Label fx:id="points" layoutX="200" layoutY="20" text="Points disponibles :" />
+                            <Label layoutX="150" text="Achat avec la bière"/>
+                            <Label fx:id="points" layoutX="200" layoutY="20" text="Bières disponibles :" />
 
                             <!--Information de la capacité 1-->
                             <Label fx:id="nomLeadership" layoutX="20" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Leadership"/>
