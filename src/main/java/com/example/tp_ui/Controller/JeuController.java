@@ -8,6 +8,9 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,12 +18,12 @@ import java.util.ResourceBundle;
 public class JeuController implements Initializable
 {
 
-
-    public Label piocheLabel;
-    public Label descriptionPioche;
-    public Label prixPioche;
-    public Label niveauPioche;
-
+    @FXML
+    public Label titreObjet;
+    @FXML
+    public Label orJoueur;
+    @FXML
+    public Label orJoueurChiffre;
     Magasin magasinObjet = new Magasin("objet");
     Joueur j = new Joueur();
 
@@ -30,7 +33,12 @@ public class JeuController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        j.setPoint(1000);
+        orJoueurChiffre.setText("" + j.getPoint());
+        titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
+        orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
+        //Attente
+        // orJoueurChiffre.setText();
 
 
     }
@@ -56,13 +64,30 @@ public class JeuController implements Initializable
 
     @FXML
     private void achat(ActionEvent event) {
-        scene = Test.getScene();
-        Node node = (Node) event.getSource() ;
+        scene = orJoueur.getScene();
+        Node node = (Node) event.getSource();
         String data = (String) node.getUserData();
 
-        Achetable a = magasinObjet.GetItem(data);
 
+        Achetable a = magasinObjet.GetItem(data);
         a.addNiv();
+        updatePoint();
+        String prix = "#prix" + data ;
+        Label labelprix = (Label) scene.lookup(prix);
+        labelprix.setText(a.getPrix() + " Or");
+
+        String prixc = "#prixc" + data ;
+        Label labelprixc = (Label) scene.lookup(prixc);
+        labelprixc.setText(a.getPrix() + " points");
+
+        String niv = "#niveau" + data ;
+        Label labelniv = (Label) scene.lookup(niv);
+        labelniv.setText(a.getNiv() + "");
+
+
+        String eff = "#effet" + data ;
+        Label labeleff = (Label) scene.lookup(eff);
+        labeleff.setText("Effet: +"+a.getEffet() + "/click");
         updatePoint();
     }
 
