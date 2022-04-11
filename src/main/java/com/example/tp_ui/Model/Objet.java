@@ -10,6 +10,12 @@ public class Objet extends Achetable{
         }
     }
 
+<<<<<<< HEAD
+=======
+//    public void augPrixPr(){
+//        prix = prix + (580 * (0.6 * getNiv()));
+//    }
+>>>>>>> Kev-Objets
 
     public Objet(String nom,int niv, int prix, double effet){
         this.nom = nom;

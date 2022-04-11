@@ -3,7 +3,11 @@ package com.example.tp_ui.Model;
 import java.util.Observable;
 
 public abstract class Achetable extends Observable {
+<<<<<<< HEAD
     double prix;
+=======
+    int prix;
+>>>>>>> Kev-Objets
     String nom;
     int niv = 0;
     double effetLvl;

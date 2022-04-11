@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class JeuController implements Initializable {
+<<<<<<< HEAD
 
     @FXML
     public Label titreObjet;
@@ -36,7 +37,15 @@ public class JeuController implements Initializable {
 
     @FXML
     public Label points;
+=======
+>>>>>>> Kev-Objets
 
+    @FXML
+    public Label titreObjet;
+    @FXML
+    public Label orJoueur;
+    @FXML
+    public Label orJoueurChiffre;
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
     Joueur j = new Joueur();
@@ -52,10 +61,18 @@ public class JeuController implements Initializable {
         orJoueurChiffre.setText("" + j.getPoint());
         titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
         orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
+<<<<<<< HEAD
     }
 
     public JeuController() {
 
+=======
+        //Attente
+        // orJoueurChiffre.setText();
+    }
+
+    public JeuController() {
+>>>>>>> Kev-Objets
         Objet Pioche = new Objet("Pioche", 0, 50, 2);
         magasinObjet.AddItem(Pioche);
         Objet Perceuse = new Objet("Perceuse", 0, 100, 4);
@@ -64,6 +81,7 @@ public class JeuController implements Initializable {
         magasinObjet.AddItem(Nain);
         Objet Foreuse = new Objet("Foreuse", 0, 500, 12);
         magasinObjet.AddItem(Foreuse);
+<<<<<<< HEAD
 
         Capacité Leadership = new Capacité("Leadership", 0, 1, 0.1);
         magasinCapacite.AddItem(Leadership);
@@ -76,6 +94,9 @@ public class JeuController implements Initializable {
 
         for (Achetable a: magasinObjet.GetItems())
         {
+=======
+        for (Achetable a : magasinObjet.GetItems()) {
+>>>>>>> Kev-Objets
             a.addObserver(j);
         }
         for (Achetable a: magasinCapacite.GetItems())
@@ -133,6 +154,7 @@ public class JeuController implements Initializable {
         Label labeleff = (Label) scene.lookup(eff);
         labeleff.setText("Effet: +"+a.getEffet() + "/click");
         updatePoint();
+<<<<<<< HEAD
 
         updatePoint();
     }
@@ -192,10 +214,26 @@ public class JeuController implements Initializable {
             effet += a.getEffet();
         }
         b.addPoint(effet);
+=======
+        String prix = "#prix" + data ;
+        Label labelprix = (Label) scene.lookup(prix);
+        labelprix.setText(a.getPrix() + " Or");
+
+        String niv = "#niveau" + data ;
+        Label labelniv = (Label) scene.lookup(niv);
+        labelniv.setText(a.getNiv() + "");
+
+
+        String eff = "#effet" + data ;
+        Label labeleff = (Label) scene.lookup(eff);
+        labeleff.setText("Effet: +"+a.getEffet() + "/click");
+        updatePoint();
+>>>>>>> Kev-Objets
 
         updatePoint();
     }
 
+<<<<<<< HEAD
     public void clickRessourceA() {
         double effet = 1;
 
@@ -203,9 +241,36 @@ public class JeuController implements Initializable {
             effet += a.getEffet();
         }
         j.addPoint(effet);
+=======
+    public void updatePoint() {
+                for (Achetable a : magasinObjet.GetItems()) {
+                    if (a.getPrix() > j.getPoint()) {
+                        try {
+                            String p = "#" + a.getNom() + "Achat";
+                            Button button = (Button) scene.lookup(p);
+                            button.setDisable(true);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+        }
+        orJoueurChiffre.setText("" + j.getPoint());
+
+    }
+
+    public void clickRessource2() {
+        double effet = 1;
+        for (Achetable a : magasinObjet.GetItems()) {
+            effet += a.getEffet();
+        }
+        j.addPoint((int) effet);
+>>>>>>> Kev-Objets
 
         updatePoint();
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Kev-Objets
