@@ -38,10 +38,14 @@ public class JeuController implements Initializable
     public JeuController()
     {
 
-        magasinObjet.AddItem(new Capacité("Leadership", "Augmente la production d'or de 50/s pour chaque niveau", 0, 75, 50));
-        magasinObjet.AddItem(new Capacité("Récolte", "Augmente la production de bière de 35/s pour chaque niveau", 0, 130, 35));
-        magasinObjet.AddItem(new Capacité("Technique de forage", "Augmente la production d'or de 250/s pour chaque niveau", 0, 325, 250));
-        magasinObjet.AddItem(new Capacité("Technique de distillerie", "Augmente la production de bière de 160/s pour chaque niveau", 0, 500, 160));
+        Capacité Leadership = new Capacité("Leadership", 0, 1, 15);
+        magasinObjet.AddItem(Leadership);
+        Capacité Competence = new Capacité("Competence", 0, 5, 60);
+        magasinObjet.AddItem(Competence);
+        Capacité Forage = new Capacité("Forage", 0, 8, 95);
+        magasinObjet.AddItem(Forage);
+        Capacité Recolte = new Capacité("Recolte", 0, 10,5);
+        magasinObjet.AddItem(Recolte);
 
         for (Achetable a: magasinObjet.GetItems())
         {

@@ -2,11 +2,11 @@ package com.example.tp_ui.Model;
 
 public class Capacité extends Achetable {
 
-    public void augPrixCl(){
-        prix = prix + (750 * (0.4 * getNiv()));
+    public void augPrixC(){
+        prix = prix++;
     }
 
-    public Capacité(String nom, String desc, int niv, double prix, double effet){
+    public Capacité(String nom, int niv, double prix, double effet){
         this.nom = nom;
         this.desc = desc;
         this.niv = niv;
@@ -17,9 +17,9 @@ public class Capacité extends Achetable {
     @Override
     public void addNiv(){
         niv++;
-        augPrixCl();
         setChanged();
         notifyObservers(-prix);
+        augPrixC();
     }
 
 
