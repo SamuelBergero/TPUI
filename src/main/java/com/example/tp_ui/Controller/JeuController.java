@@ -25,7 +25,9 @@ public class JeuController implements Initializable
     @FXML
     public Label orJoueurChiffre;
     Magasin magasinObjet = new Magasin("objet");
+    Magasin magasinCapacite = new Magasin("capacite");
     Joueur j = new Joueur();
+    Joueur b = new Joueur();
 
     @FXML
     private Label Test;
@@ -34,6 +36,7 @@ public class JeuController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         j.setPoint(1000);
+        b.setPoint(100);
         orJoueurChiffre.setText("" + j.getPoint());
         titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
         orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
@@ -47,15 +50,19 @@ public class JeuController implements Initializable
     {
 
         Capacité Leadership = new Capacité("Leadership", 0, 1, 15);
-        magasinObjet.AddItem(Leadership);
+        magasinCapacite.AddItem(Leadership);
         Capacité Competence = new Capacité("Competence", 0, 5, 60);
-        magasinObjet.AddItem(Competence);
+        magasinCapacite.AddItem(Competence);
         Capacité Forage = new Capacité("Forage", 0, 8, 95);
-        magasinObjet.AddItem(Forage);
+        magasinCapacite.AddItem(Forage);
         Capacité Recolte = new Capacité("Recolte", 0, 10,5);
-        magasinObjet.AddItem(Recolte);
+        magasinCapacite.AddItem(Recolte);
 
         for (Achetable a: magasinObjet.GetItems())
+        {
+            a.addObserver(j);
+        }
+        for (Achetable a: magasinCapacite.GetItems())
         {
             a.addObserver(j);
         }
@@ -63,18 +70,15 @@ public class JeuController implements Initializable
     }
 
     @FXML
-    private void achat(ActionEvent event) {
+    private void achatc(ActionEvent event) {
         scene = orJoueur.getScene();
         Node node = (Node) event.getSource();
         String data = (String) node.getUserData();
 
 
-        Achetable a = magasinObjet.GetItem(data);
+        Achetable a = magasinCapacite.GetItem(data);
         a.addNiv();
         updatePoint();
-        String prix = "#prix" + data ;
-        Label labelprix = (Label) scene.lookup(prix);
-        labelprix.setText(a.getPrix() + " Or");
 
         String prixc = "#prixc" + data ;
         Label labelprixc = (Label) scene.lookup(prixc);
@@ -114,6 +118,15 @@ public class JeuController implements Initializable
 
     }
 
+    public void clickRessourceB() {
+        double effet = 0.5;
 
+        for (Achetable a : magasinCapacite.GetItems()) {
+            effet += a.getEffet();
+        }
+        b.addPoint(effet);
+
+        updatePoint();
+    }
 
 }

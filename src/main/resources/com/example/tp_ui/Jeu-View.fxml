@@ -58,7 +58,7 @@
                         <AnchorPane>
                             <!-- Label pour informations générales -->
                             <Label layoutX="150" text="1 point de capacité par 100 ressources produites"/>
-                            <Label layoutX="200" layoutY="20" text="Points disponibles :" />
+                            <Label fx:id="points" layoutX="200" layoutY="20" text="Points disponibles :" />
 
                             <!--Information de la capacité 1-->
                             <Label fx:id="nomLeadership" layoutX="20" layoutY="50" prefHeight="17.0" prefWidth="165.0" text="Leadership"/>
@@ -71,7 +71,7 @@
                             <Label fx:id="nivLeadership" layoutX="70" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="20" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="90" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button fx:id="LeadershipAchat" layoutX="90" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
 
                             <!-- Information de la capacité 2 -->
@@ -85,7 +85,7 @@
                             <Label fx:id="nivCompetence" layoutX="70" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="20" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="90" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button fx:id="CompetenceAchat" layoutX="90" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
 
                             <!-- Information de la capacité 3 -->
@@ -99,7 +99,7 @@
                             <Label fx:id="nivForage" layoutX="400" layoutY="110" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="350" layoutY="110" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="430" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button fx:id="ForageAchat"  layoutX="430" layoutY="110" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
 
                             <!--Information de la capacité 4-->
@@ -113,7 +113,7 @@
                             <Label fx:id="nivRecolte" layoutX="400" layoutY="280" prefHeight="17.0" prefWidth="165.0" text="0"/>
                             <Label layoutX="350" layoutY="280" prefHeight="17.0" prefWidth="165.0" text = "Niveau :"/>
 
-                            <Button layoutX="430" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achat"
+                            <Button fx:id="RecolteAchat" layoutX="430" layoutY="280" mnemonicParsing="false" id="butAchat" onAction="#achatc"
                                     text="+" userData="but"/>
                         </AnchorPane>
 
