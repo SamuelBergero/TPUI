@@ -31,11 +31,13 @@ public class JeuController implements Initializable {
 
     @FXML
     public Label AffOr;
+
     @FXML
     public Label AffBiere;
 
     @FXML
     public Label points;
+
 
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
@@ -43,15 +45,15 @@ public class JeuController implements Initializable {
     Joueur b = new Joueur();
 
     @FXML
-    private Label Test;
     private Scene scene;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        j.setPoint(1000);
-        orJoueurChiffre.setText("" + j.getPoint());
+        j.setPoint(0);
+        b.setPoint(0);
         titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
         orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
+        orJoueurChiffre.setText(orJoueurChiffre.getText());
     }
 
     public JeuController() {
@@ -82,6 +84,8 @@ public class JeuController implements Initializable {
         {
             a.addObserver(b);
         }
+
+
     }
 
     @FXML
@@ -126,7 +130,7 @@ public class JeuController implements Initializable {
 
         String niv = "#niveau" + data ;
         Label labelniv = (Label) scene.lookup(niv);
-        labelniv.setText(a.getPrix() + "");
+        labelniv.setText(a.getNiv() + "");
 
 
         String eff = "#effet" + data ;
@@ -134,7 +138,6 @@ public class JeuController implements Initializable {
         labeleff.setText("Effet: +"+a.getEffet() + "/click");
         updatePoint();
 
-        updatePoint();
     }
 
     public void updatePoint() {
@@ -179,10 +182,10 @@ public class JeuController implements Initializable {
             }
         }
         orJoueurChiffre.setText("" + j.getPoint());
-        AffOr.setText("" + j.getPoint());
+        AffOr.setText(orJoueur.getText() + " " + j.getPoint());
         b.setPoint(new BigDecimal(b.getPoint()).setScale(2, RoundingMode.HALF_UP).doubleValue());
-        AffBiere.setText("" + b.getPoint());
-        points.setText("Bières disponibles :" + b.getPoint());
+        AffBiere.setText("Bière du joueur : " + b.getPoint());
+        points.setText("Bières disponibles : " + b.getPoint());
     }
 
     public void clickRessourceB() {

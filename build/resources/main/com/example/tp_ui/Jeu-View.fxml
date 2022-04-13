@@ -12,7 +12,7 @@
                     <content>
                         <AnchorPane>
                             <children>
-                                <Label fx:id="AffOr" layoutX="157.0" layoutY="53.0" text="Or du joueur :" />
+                                <Label fx:id="AffOr" layoutX="157.0" layoutY="53.0" text="Or du joueur : 0.0" />
                                 <Button layoutX="157.0" layoutY="81.0" mnemonicParsing="false" onAction="#clickRessourceA" prefHeight="160.0" prefWidth="197.0" text="Click" />
                             </children>
                         </AnchorPane>
@@ -25,7 +25,7 @@
                     <content>
                         <AnchorPane>
                             <children>
-                                <Label fx:id="AffBiere" layoutX="249.0" layoutY="80.0" />
+                                <Label fx:id="AffBiere" layoutX="249.0" layoutY="80.0" text="Bière du joueur : 0.0" />
                                 <Button layoutX="186.0" layoutY="117.0" mnemonicParsing="false" onAction="#clickRessourceB" prefHeight="142.0" prefWidth="199.0" text="Click" />
                             </children>
                         </AnchorPane>
@@ -48,7 +48,7 @@
                             <Label layoutX="20" layoutY="110" prefHeight="17.0">Niveau actuel :</Label>
                             <Label fx:id="niveauPioche" layoutX="105" layoutY="110" prefHeight="17.0" text="0"/>
                             <Label fx:id="effetPioche" layoutX="20" layoutY="130" prefHeight="17.0">Effet: +2/click</Label>
-                            <Button layoutX="110" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
+                            <Button disable="true" layoutX="110" layoutY="70" mnemonicParsing="false" id="PiocheAchat" onAction="#achat"
                                     text="LvlUp" userData="Pioche"/>
                             <!--Information de l'objet 2-->
                             <Label layoutX="430" layoutY="70" prefHeight="17.0">Perceuse</Label>
@@ -57,7 +57,7 @@
                             <Label layoutX="430" layoutY="110" prefHeight="17.0">Niveau actuel :</Label>
                             <Label fx:id="niveauPerceuse" layoutX="515" layoutY="110" prefHeight="17.0" text="0"/>
                             <Label fx:id="effetPerceuse" layoutX="430" layoutY="130" prefHeight="17.0">Effet: +4.0/click</Label>
-                            <Button layoutX="540" layoutY="70" mnemonicParsing="false" id="PerceuseAchat" onAction="#achat"
+                            <Button disable="true" layoutX="540" layoutY="70" mnemonicParsing="false" id="PerceuseAchat" onAction="#achat"
                                     text="LvlUp" userData="Perceuse"/>
                             <!--Information de l'objet 3-->
                             <Label layoutX="20" layoutY="250" prefHeight="17.0">Nain</Label>
@@ -66,16 +66,16 @@
                             <Label layoutX="20" layoutY="290" prefHeight="17.0">Niveau actuel :</Label>
                             <Label fx:id="niveauNain" layoutX="105" layoutY="290" prefHeight="17.0" text="0"/>
                             <Label fx:id="effetNain" layoutX="20" layoutY="310" prefHeight="17.0">Effet: +8.0/click</Label>
-                            <Button layoutX="110" layoutY="250" mnemonicParsing="false" id="NainAchat" onAction="#achat"
+                            <Button disable="true" layoutX="110" layoutY="250" mnemonicParsing="false" id="NainAchat" onAction="#achat"
                                     text="LvlUp" userData="Nain"/>
                             <!--Information de l'objet 4-->
-                            <Label layoutX="430" layoutY="250" prefHeight="17.0">Foreuse</Label>
-                            <Label layoutX="430" layoutY="270" prefHeight="17.0">Prix :</Label>
+                            <Label layoutX="430" layoutY="250" prefHeight="17.0" text="Foreuse"/>
+                            <Label layoutX="430" layoutY="270" prefHeight="17.0" text="Prix : "/>
                             <Label fx:id="prixForeuse" layoutX="460" layoutY="270" prefHeight="17.0" text="500.0 Or"/>
-                            <Label layoutX="430" layoutY="290" prefHeight="17.0">Niveau actuel :</Label>
+                            <Label layoutX="430" layoutY="290" prefHeight="17.0" text="Niveau actuel : "/>
                             <Label fx:id="niveauForeuse" layoutX="515" layoutY="290" prefHeight="17.0" text="0"/>
-                            <Label fx:id="effetForeuse" layoutX="430" layoutY="310" prefHeight="17.0">Effet : +12/click</Label>
-                            <Button layoutX="540" layoutY="250" mnemonicParsing="false" id="ForeuseAchat" onAction="#achat"
+                            <Label fx:id="effetForeuse" layoutX="430" layoutY="310" prefHeight="17.0" text="Effet : +12/click"/>
+                            <Button disable="true" layoutX="540" layoutY="250" mnemonicParsing="false" id="ForeuseAchat" onAction="#achat"
                                     text="LvlUp" userData="Foreuse"/>
 
                         </AnchorPane>
