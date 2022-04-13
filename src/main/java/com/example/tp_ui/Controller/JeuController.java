@@ -1,6 +1,7 @@
 package com.example.tp_ui.Controller;
 
 import com.example.tp_ui.Model.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,6 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -19,6 +22,8 @@ import java.net.URL;
 import java.nio.channels.Pipe;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class JeuController implements Initializable {
 
@@ -39,10 +44,12 @@ public class JeuController implements Initializable {
     public Label points;
 
 
+
     Magasin magasinObjet = new Magasin("objet");
     Magasin magasinCapacite = new Magasin("capacite");
     Joueur j = new Joueur();
     Joueur b = new Joueur();
+
 
     @FXML
     private Scene scene;
@@ -54,6 +61,8 @@ public class JeuController implements Initializable {
         titreObjet.setFont(Font.font("Times New Roman", FontWeight.BOLD, 15));
         orJoueur.setFont(Font.font("Times New Roman", FontPosture.ITALIC, 14));
         orJoueurChiffre.setText(orJoueurChiffre.getText());
+
+
     }
 
     public JeuController() {
@@ -189,14 +198,31 @@ public class JeuController implements Initializable {
     }
 
     public void clickRessourceB() {
-        double effet = 0.1;
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(()->{
+                    double effet = 5;
 
-        for (Achetable a : magasinCapacite.GetItems()) {
-            effet += a.getEffet();
-        }
-        b.addPoint(effet);
+                    for (Achetable a : magasinCapacite.GetItems()) {
+                        effet += a.getEffet();
+                    }
+                    b.addPoint(effet);
+                    updatePoint();});
+                scene = orJoueur.getScene();
+                String p = "#buttonB";
+                Button button = (Button) scene.lookup(p);
+                button.setDisable(false);
+            }
+        };
 
-        updatePoint();
+        scene = orJoueur.getScene();
+        String p = "#buttonB";
+        Button button = (Button) scene.lookup(p);
+        button.setDisable(true);
+
+       Timer test = new Timer();
+       test.schedule(task,2000);
     }
 
     public void clickRessourceA() {
