@@ -13,7 +13,7 @@
                         <AnchorPane>
                             <children>
                                 <Label fx:id="AffOr" layoutX="157.0" layoutY="53.0" text="Or du joueur : 0.0" />
-                                <Button layoutX="157.0" layoutY="81.0" mnemonicParsing="false" onAction="#clickRessourceA" prefHeight="160.0" prefWidth="197.0" text="Click" />
+                                <Button layoutX="157.0" layoutY="81.0" mnemonicParsing="true" onAction="#clickRessourceA" prefHeight="160.0" prefWidth="197.0" text="_Click" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -26,7 +26,7 @@
                         <AnchorPane>
                             <children>
                                 <Label fx:id="AffBiere" layoutX="249.0" layoutY="80.0" text="Bière du joueur : 0.0" />
-                                <Button layoutX="186.0" layoutY="117.0" mnemonicParsing="false" onAction="#clickRessourceB" prefHeight="142.0" prefWidth="199.0" text="Click" />
+                                <Button fx:id="buttonB" layoutX="186.0" layoutY="117.0" mnemonicParsing="true" onAction="#clickRessourceB" prefHeight="142.0" prefWidth="199.0" text="_Click" />
                             </children>
                         </AnchorPane>
                     </content>
